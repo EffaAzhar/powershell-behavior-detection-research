@@ -1,25 +1,38 @@
 # Behavioral Detection of Suspicious PowerShell Activity Using Log Analysis
 
-## Research Objective
-The purpose of this research is to investigate whether malicious PowerShell activity can be distinguished from legitimate administrative use through behavioral log analysis.
+## Project Objective
+This project investigates whether suspicious PowerShell activity can be distinguished from benign administrative usage through behavioral log analysis in a controlled Windows virtual machine environment.
 
-## Hypothesis
-Malicious PowerShell commands often have different patterns, like higher entropy, longer commands, and unusual execution chains, compared to normal administrative commands.
+## Research Question
+Can suspicious PowerShell execution be identified using behavioral indicators extracted from PowerShell operational logs?
 
-## Methodology
-1. Generate benign PowerShell activity
-2. Simulate suspicious activity
-3. Collect logs
-4. Extract features
-5. Perform statistical analysis
-6. Build detection model
+## Environment
+- Host machine: MacBook Pro
+- Virtualization: UTM
+- Guest OS: Windows 11 ARM
+- Logging source: PowerShell Operational Logs
+- Purpose: Build a small research dataset of benign and suspicious PowerShell behavior
 
-## Tools Used
-1. Windows Event Logs
-2. Sysmon
-3. Python
-4. Pandas
-5. Scikit-learn
+## Current Progress
+- Installed UTM on macOS
+- Created Windows 11 virtual machine
+- Configured VM safely without shared folders
+- Completed Windows installation
+- Opened PowerShell as Administrator
+- Enabled Script Block Logging
+- Enabled Module Logging
+- Verified log generation in Event Viewer
+- Began generating benign and suspicious PowerShell activity
+
+## Repository Structure
+- `README.md` — project overview
+- `docs/setup-log.md` — detailed setup record
+- `docs/methodology.md` — research methodology
+- `logs/` — exported logs
+- `scripts/` — Python analysis scripts
+- `results/` — graphs and findings
+- `paper/` — project report or draft paper
 
 ## Status
-Project in progress.
+In progress.
+
