@@ -28,6 +28,7 @@ Can suspicious PowerShell execution be identified using behavioral indicators ex
 - `README.md` — project overview
 - `docs/setup-log.md` — detailed setup record
 - `docs/methodology.md` — research methodology
+- `docs/data-generation.md` - generate a controlled dataset
 - `logs/` — exported logs
 - `scripts/` — Python analysis scripts
 - `results/` — graphs and findings
