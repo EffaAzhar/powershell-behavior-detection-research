@@ -170,6 +170,10 @@ screenshots/
 
 This project successfully demonstrated how PowerShell Operational Logs can be used to identify behavioural indicators of suspicious activity. By combining PowerShell logging, behavioural analysis and MITRE ATT&CK mapping, the project showed how security analysts can move beyond signature-based detection and focus on attacker behaviours and operational context.
 
+## Limitations
+
+The project was conducted within a controlled Windows virtual machine environment and used a limited set of PowerShell commands. Real world environments contain significantly more user activity, system processes  and adversary techniques. Therefore, the findings should be considered exploratory rather than comprehensive.
+
 ## Future Work
 
 Potential future enhancements include:
