@@ -40,10 +40,7 @@ However:
 ```powershell
 powershell -NoProfile -Command "Get-Process"
 ```
-
-introduces additional behavioural context that may warrant further investigation.
-
-This demonstrates the importance of behavioural analysis rather than relying solely on individual command names.
+ additional behavioural context that may indicate the need for further investigation. This demonstrates the importance of behavioural analysis rather than relying solely on individual command names.
 
 
 ## Benefits of Behavioural Monitoring
@@ -83,8 +80,4 @@ Future improvements may include:
 
 ## Conclusion
 
-The project demonstrated that PowerShell Operational Logs can provide useful visibility into command execution behaviour.
-
-Behavioural indicators such as account discovery, network discovery, hidden PowerShell execution, and NoProfile execution were successfully identified and mapped to MITRE ATT&CK techniques.
-
-The findings support the use of behavioural monitoring as an effective approach for identifying potentially suspicious PowerShell activity within Windows environments.
+The project demonstrated that PowerShell Operational Logs can provide useful visibility into command execution behaviour. Behavioural indicators such as account discovery, network discovery, hidden PowerShell execution and NoProfile execution were successfully identified and mapped to MITRE ATT&CK techniques. The findings support the use of behavioural monitoring as an effective approach for identifying potentially suspicious PowerShell activity within Windows environments.
