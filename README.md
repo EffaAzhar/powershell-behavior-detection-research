@@ -143,14 +143,15 @@ powershell-behavior-detection-research/
 README.md
 
 docs/
-├── setup-log.md
-├── methodology.md
-├── logging-verification.md
-├── benign-activity-analysis.md
-├── suspicious-activity-analysis.md
-├── behavioural-indicators.md
-├── mitre-attack-mapping.md
-├── findings-and-limitations.md
+├── 01-methodology.md
+├── 02-data-generation.md
+├── 03-setup-log.md
+├── 04-logging-verification.md
+├── 05-benign-activity-analysis.md
+├── 06-suspicious-activity-analysis.md
+├── 07-behavioural-indicators.md
+├── 08-mitre-attack-mapping.md
+├── 09-findings-and-limitations.md
 
 screenshots/
 ```
