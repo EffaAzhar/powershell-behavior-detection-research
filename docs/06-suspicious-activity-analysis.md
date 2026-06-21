@@ -1,18 +1,11 @@
 # Suspicious Activity Analysis
 
-## Objective
 
-The purpose of this phase was to analyse PowerShell behaviours that may indicate suspicious activity within a Windows environment.
-
-Rather than executing malware, safe PowerShell commands commonly associated with attacker reconnaissance and defence evasion techniques were executed in a controlled laboratory environment.
-
-PowerShell Operational Logs were then analysed to determine whether behavioural indicators could be identified through Event ID 4104 (Script Block Logging).
-
----
+This part of research analyse PowerShell behaviours that may indicate suspicious activity within a Windows environment. Rather than executing malware, safe PowerShell commands commonly associated with **attacker reconnaissance** and **defence evasion techniques** were executed in a controlled laboratory environment. PowerShell Operational Logs were then analysed to determine whether behavioural indicators could be identified through Event ID 4104 (Script Block Logging).
 
 ## Why Context Matters
 
-One of the key findings of this project is that a PowerShell command should not be judged solely by its name.
+One of the key findings of this project is that a PowerShell command should not be judged solely by its name. Context matteres a lot.
 
 For example:
 
@@ -28,13 +21,8 @@ However:
 powershell -NoProfile -Command "Get-Process"
 ```
 
-may deserve additional investigation because PowerShell is being launched with parameters frequently observed during malicious activity.
-
-The command itself is not malicious.
-
+may deserve additional investigation because PowerShell is being launched with parameters frequently observed during malicious activity. The command itself is not malicious.
 The execution context is what changes the security significance.
-
----
 
 ## Discovery Activity
 
@@ -50,8 +38,6 @@ Screenshot:
 
 ![Get-LocalUser](../screenshots/07-get-localuser-event-4104.png)
 
-Analysis:
-
 The command enumerates local user accounts on the system.
 
 While administrators may use this command for legitimate management tasks, attackers frequently perform account discovery after gaining access to a system.
@@ -65,7 +51,6 @@ MITRE ATT&CK:
 
 - T1087 – Account Discovery
 
----
 
 ### Network Configuration Discovery
 
@@ -78,8 +63,6 @@ Get-NetIPAddress
 Screenshot:
 
 ![Get-NetIPAddress](../screenshots/08-get-netipaddress-event-4104.png)
-
-Analysis:
 
 The command retrieves network interface and IP address information.
 
@@ -94,7 +77,6 @@ MITRE ATT&CK:
 
 - T1016 – System Network Configuration Discovery
 
----
 
 ### Network Connection Discovery
 
@@ -123,7 +105,6 @@ MITRE ATT&CK:
 
 - T1049 – System Network Connections Discovery
 
----
 
 ## Defence Evasion Indicators
 
@@ -139,7 +120,6 @@ Screenshot:
 
 ![NoProfile Execution](../screenshots/10-powershell-noprofile-execution.png)
 
-Analysis:
 
 The command launches a new PowerShell instance without loading user profile scripts.
 
@@ -154,8 +134,6 @@ MITRE ATT&CK:
 
 - T1059.001 – PowerShell
 
----
-
 ### Hidden PowerShell Execution
 
 Command executed:
@@ -168,7 +146,6 @@ Screenshot:
 
 ![Hidden Window Execution](../screenshots/11-powershell-hidden-window-execution.png)
 
-Analysis:
 
 The command executes PowerShell without displaying a visible console window.
 
@@ -183,7 +160,6 @@ MITRE ATT&CK:
 
 - T1059.001 – PowerShell
 
----
 
 ## Comparison of Benign and Suspicious Activity
 
@@ -197,15 +173,6 @@ MITRE ATT&CK:
 | Get-NetTCPConnection | Discovery Activity |
 | PowerShell -NoProfile | Suspicious Execution Context |
 | PowerShell -WindowStyle Hidden | Suspicious Execution Context |
-
----
-
 ## Key Findings
 
-The analysis demonstrated that PowerShell Operational Logs provide detailed visibility into command execution behaviour.
-
-Event ID 4104 successfully captured both administrative commands and suspicious execution techniques.
-
-The investigation also showed that command context is often more important than the command itself. A command such as Get-Process may represent normal administration when executed directly, but may become suspicious when launched using parameters such as NoProfile or WindowStyle Hidden.
-
-These findings support the use of behavioural monitoring rather than signature-based detection alone when investigating PowerShell activity.
+The analysis demonstrated that PowerShell Operational Logs provide detailed visibility into command execution behaviour. Event ID 4104 successfully captured **both administrative commands and suspicious execution techniques.** The investigation also showed that **command context** is often more important than the command itself. A command such as Get-Process may represent normal administration when executed directly, but may become suspicious when launched using parameters such as NoProfile or WindowStyle Hidden. These findings support the use of **behavioural monitoring rather than signature based detection** alone when investigating PowerShell activity.
