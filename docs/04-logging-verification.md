@@ -37,7 +37,7 @@ The results showed several PowerShell events including:
 
 ### Evidence
 
-![PowerShell Event IDs](../screenshots/02-powershell-event-ids-4103-4104.png)
+![PowerShell Event IDs](../screenshots/02-powershell-event-ids-4103-4104.png.png)
 
 
 The presence of Event IDs 4103 and 4104 demonstrated that PowerShell command activity was being recorded and could be used for behavioural analysis.
@@ -55,7 +55,7 @@ Select-Object -First 10
 
 ### Evidence
 
-![Script Block Logging Events](../screenshots/03-script-block-logging-event-4104.png)
+![Script Block Logging Events](../screenshots/03-script-block-logging-event-4104.png.png)
 
 
 Event ID 4104 entries were successfully identified within the PowerShell Operational log. Script Block Logging provides visibility into PowerShell command execution and is particularly valuable for detecting suspicious or unusual behaviour.
